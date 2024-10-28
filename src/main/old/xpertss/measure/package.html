@@ -1,0 +1,37 @@
+<body>
+Provides strongly typed measurements to enforce compile-time
+check of parameters consistency and avoid interface errors.
+<p/>
+Let's take the following example:
+<pre>
+   class Person {
+      void setWeight(double weight);
+   }
+</pre>
+<p/>
+Should the weight be in pound, kilogram, other ??<br>
+Using measures there is no room for error:
+<p/>
+<pre>
+  class Person {
+    void setWeight(Measurable&lt;Mass&gt; weight);
+  }
+</pre>
+<p/>
+Not only is the interface cleaner (the weight has to be of mass type);
+but also there is no confusion on the measurement unit as the user can
+specify the value in any unit of mass:
+<p/>
+<pre>
+   BigDecimal weightInKg = weight.getValue(KILOGRAM);
+   BigDecimal weightInLb = weight.getValue(POUND);
+</pre>
+<p/>
+Measurable work hand-in-hand with units (also parameterized).
+For example, the following would result in compile-time error:
+<p/>
+<pre>
+   // Compile error, Unit&lt;Mass&gt; required.
+   BigDecimal weightInLiter = weight.getValue(LITER);
+</pre>
+</body>

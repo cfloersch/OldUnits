@@ -1,0 +1,75 @@
+My original Units packages are located in Drive.
+
+
+http://www.gettingcirrius.com/2012/01/modeling-scientific-attributes-in-java.html
+
+http://www.javaworld.com/article/2077770/core-java/introduction-to-jsr-275--measures-and-units.html
+
+http://en.wikipedia.org/wiki/Units_of_measurement
+
+
+
+
+So I have a SI.Prefix set which includes kilo and mega and giga which work
+properly for all the standard SI units. However, it doesn't work properly
+for bytes/bits which should actually be multplied by 1024 not 1000 for
+example. There is a binary prefix for bytes/bits but its not what people
+are used to and I feel they likely wouldn't realize the mistake they were
+making. As such I am seriously considering getting rid of Byte/Bit as a
+unit so no-one will make that mistake. The only alternative would be for
+the KILO/MEGA methods for example to check the unit being supplied and
+do something different for units of Byte and Bit..
+
+
+
+
+I think many of these classes are misnamed. I would rename Quantity to
+Measure. I would rename Measure to Measurement. I would rename Measurable
+to Quantity. Quantity just seems more like a unit of measure.
+
+In lou of that maybe we ought to make Measurable an abstract class, move
+the concrete methods from Measure into it and then rename it to Measure,
+deleting the existing Measure. I also kind of like the of() methodology
+vs the valueOf() that seems to be so common in Java these days.
+
+
+
+
+
+
+
+
+
+AlternateUnit
+  Given any unit type it simply reassociates a new label/symbol with the given
+  unit. This can be used to by KILO for example to take a Transformed Unit of
+  Meter and give it a label of Km
+
+TransformedUnit
+  A unit that is simply a transformation of its parent unit. These transformations
+  include any of the basic Converters, ADD, SUBTRACT, MULTIPLY, DIVIDE, and LOG.
+  These units typically do not have symbols/labels.
+
+ProductUnit
+  A unit that is derived from two Base/Alternate units. For example METER_PER_SECOND
+  would be METER.divide(SECOND) and as such it is a product of two base units, meter
+  and second. The UNIT.multiply(UNIT), UNIT.divide(UNIT), UNIT.pow(), and UNIT.root()
+  methods all produce ProductUnits. Their label/symbol is a product of the labels /
+  symbols of its parts.
+
+CompoundUnit
+  Units derived from varying magnatudes of the same measure. For example HOUR_MIN_SEC
+  which are different measures of time.
+
+BaseUnit
+  Represents the base unit with a given system. All transformations occur in a procession
+  toward the base unit and then back to the desired end unit. These units are all assumed
+  to be ONE in value relative to anything else.
+
+  I have some confusion as to why RADIAN, STERADIAN, and BIT are not considered BaseUnits.
+
+
+
+Dimension: No real clue what this really is.....
+  It would appear that Dimension operates only on BaseUnits, AlternateUnits, and Product
+  Units. Both Compound and Transformed units are operated on from their standard unit.

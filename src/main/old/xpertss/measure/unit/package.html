@@ -1,0 +1,43 @@
+<body>
+<p> Provides support for programatic unit handling.</p>
+
+<h3> Standard/NonStandard Units</h3>
+Standard units and prefixes are provided by the
+{@link xpertss.measure.unit.SI SI} class (Système International d'Unités) and
+about 50 non-standard units are available through the
+{@link xpertss.measure.unit.NonSI NonSI},
+{@link xpertss.measure.unit.Imperial Imperial},
+{@link xpertss.measure.unit.Troy Troy} classes.
+
+<h3>Unit Parameterization</h3>
+
+Units are parameterized (&lt;Q extends {@link xpertss.measure.quantity.Quantity Quantity}>) to
+enforce compile-time checks of units/measures consistency, for example:
+
+<p/>
+<pre>
+
+Unit
+&lt;Time&gt; MINUTE = SECONDS.times(60); // Ok.
+Unit
+&lt;Time&gt; MINUTE = METRE.times(60); // Compile error.
+
+Unit
+&lt;Pressure&gt; HECTOPASCAL = HECTO(PASCAL); // Ok.
+Unit
+&lt;Pressure&gt; HECTOPASCAL = HECTO(NEWTON); // Compile error.
+
+Measurable
+&lt;Time&gt; duration = Measure.valueOf(2, MINUTE); // Ok.
+Measurable
+&lt;Time&gt; duration = Measure.valueOf(2, CELSIUS); // Compile error.
+
+long milliseconds = duration.longValue(MILLI(SECOND)); // Ok.
+long milliseconds = duration.longValue(POUND); // Compile error.
+</pre>
+
+<p/>
+
+<h3>UML Diagram</h3>
+<IMG alt="UML Diagram" src="doc-files/unit.png">
+</body>

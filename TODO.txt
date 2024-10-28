@@ -1,0 +1,105 @@
+So I modified Dimension.NONE to construct it's own ProductUnit<Dimensionless>()
+as there was a chicken and egg issue between the SI.ONE init and the Dimension
+init. However, that means it will return a Unit that is NOT interned to the
+Dimensionless.class. I have not found any issues with that so far but be on
+the lookout.
+
+===========================================================================
+
+
+Finish the impl of Unit and its sub types including CompoundUnit.
+
+===========================================================================
+
+Transplant my SI, NonSI, BinaryPrefix, SIPrefix, and Imperial units
+classes.
+
+===========================================================================
+
+Improve the toString of Dimension. To accomplish this we need to
+impl toString on all the Unit types. BaseUnit is done. Just need
+the others now. Also the question comes up. Should SI.ONE be a
+ProductUnit or should it be something else?
+
+===========================================================================
+
+Finish the Dimensional computations. They used to use a model. I think
+I need to restore that to some degree. It allows us to compute what
+conversions can take place beyond LENGTH to LENGTH or TEMP to TEMP or
+MASS to MASS.
+
+===========================================================================
+
+Impl Measurement.. Include a of(String) method which parses a measurement
+and its unit. That of course has a need for the parser to have a general
+idea of its quantity (aka is it mass, length, etc)..
+
+===========================================================================
+
+Make sure all of my units convert to the base unit directly and there
+are no indirect conversions. Create tests for all the ones I am likely
+to use frequently.
+
+===========================================================================
+
+I realize kilogram is the base unit for Mass. I would love to change
+that to gram.
+
+===========================================================================
+
+Impl Log, and Exp converters to use BigMath package. Create tests.
+
+===========================================================================
+
+Re-add the currency capability via service provider framework, a currency
+unit class, etc..
+
+
+
+
+
+
+
+
+
+Totally redo the entire formatter model. The current model is juvenile
+
+===========================================================================
+
+Totally redo the Currency model to utilize ServiceProvider framework
+
+===========================================================================
+
+I HATE the fact that the KILOGRAM is the base unit of mass. It really
+throws a monkey wrench into the whole prefix model.
+
+===========================================================================
+
+Modify all units to be relative to their base. We want to minimize the
+number of mathematical operations performed and thus the amount of error
+that can creep into the equation. At most it should be any given unit to
+the base unit and then to the destination unit. There should never be any
+intermediary units like there are today.
+
+===========================================================================
+
+Add conversion tests to our unit quantities
+
+===========================================================================
+
+Fix LogConverter and enable DECIBLE QuantityType
+
+===========================================================================
+
+The old system defined POINT and PIXEL which I do not believe really
+have fixed definitions. The new one defines a set of typesetter units
+such as LINE, POINT, PICA, etc.. Do I even want to define these? Will
+they really be used? If so I need to find their fixed relative values
+based on the METER rather than the INCH.
+
+===========================================================================
+
+
+
+
+
