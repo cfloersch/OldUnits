@@ -7,7 +7,8 @@ import org.xpertss.measure.Quantity;
 import org.xpertss.measure.Unit;
 
 /**
- * TODO Do we need to have this class?
+ * TODO Do we need to have this class? Maybe make it an enum that allows us
+ * to access a system of units (SI, US_Customary, Imperial, etc).
  * <p/>
  * A system of units grouped together for historical or cultural reasons.
  * <p/>
