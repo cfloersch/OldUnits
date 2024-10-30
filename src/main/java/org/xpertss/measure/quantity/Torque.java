@@ -14,6 +14,8 @@ import org.xpertss.measure.Unit;
  *
  * @see Force
  * @see Length
+ *
+ * TODO Beyond spec
  */
 public interface Torque extends Quantity<Torque> {
 

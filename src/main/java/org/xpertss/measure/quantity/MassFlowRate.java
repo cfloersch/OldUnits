@@ -10,6 +10,8 @@ import org.xpertss.measure.Unit;
  * @see Mass
  * @see Time
  * @see <a href="http://en.wikipedia.org/wiki/Mass_flow_rate">Wikipedia: Mass Flow Rate</a>
+ *
+ * TODO Beyond spec
  */
 public interface MassFlowRate extends Quantity<MassFlowRate> {
 

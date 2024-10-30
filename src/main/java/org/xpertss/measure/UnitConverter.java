@@ -77,6 +77,8 @@ public abstract class UnitConverter {
     */
    public abstract BigDecimal convert(BigDecimal value);
 
+   // TODO Do we want convert(long) and convert(BigInteger) here as well
+
    /**
     * Concatenates this converter with another converter. The resulting
     * converter is equivalent to first converting by the specified converter

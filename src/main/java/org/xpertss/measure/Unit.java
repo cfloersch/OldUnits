@@ -441,4 +441,14 @@ public abstract class Unit<Q extends Quantity<Q>> {
    }
 
 
+   // TODO The Java Spec has a concept of equivalence where 1 km is equivalent to .6214 miles
+   // even though those would not be equal in a traditional java object sense. This concept of
+   // equivalence can be extended to compareTo. 1 mile is greater than 1 km for example.
+
+   // Note that it makes no sense to compare a meter to a gram as they are totally different
+   // dimensions (aka incompatible with one another).
+
+
+   // TODO The spec also has a prefix method which presumably allows you to convert the unit
+   // between centi and milli or mega and kilo as examples.
 }

@@ -12,6 +12,8 @@ import org.xpertss.measure.Unit;
  * @see AngularSpeed
  * @see Time
  * @see Acceleration
+ *
+ * TODO Beyond spec
  */
 public interface AngularAcceleration extends Quantity<AngularAcceleration> {
 

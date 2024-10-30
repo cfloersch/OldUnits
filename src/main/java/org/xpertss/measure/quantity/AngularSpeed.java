@@ -16,6 +16,8 @@ import org.xpertss.measure.Unit;
  * @see AngularAcceleration
  * @see Speed
  * @see <a href="http://en.wikipedia.org/wiki/Angular_speed">Wikipedia: Angular Speed</a>
+ *
+ * TODO Beyond spec
  */
 public interface AngularSpeed extends Quantity<AngularSpeed> {
 

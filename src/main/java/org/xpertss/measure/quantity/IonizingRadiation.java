@@ -11,6 +11,8 @@ import org.xpertss.measure.units.SI;
  * ("coulomb per kilogram).
  *
  * @see <a href="http://en.wikipedia.org/wiki/Ionizing_radiation">Wikipedia: Ionizing Radiation</a>
+ *
+ * TODO Beyond spec
  */
 public interface IonizingRadiation extends Quantity<IonizingRadiation> {
 

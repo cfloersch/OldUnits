@@ -11,6 +11,8 @@ import org.xpertss.measure.units.SI;
  *
  * @see LuminousIntensity
  * @see Area
+ *
+ * TODO Beyond spec
  */
 public interface Luminance extends Quantity<Luminance> {
 

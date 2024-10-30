@@ -11,6 +11,8 @@ import org.xpertss.measure.units.SI;
  *
  * @see Length
  * @see <a href="http://en.wikipedia.org/wiki/Wavenumber">Wikipedia: Wavenumber</a>
+ *
+ * TODO Beyond spec
  */
 public interface WaveNumber extends Quantity<WaveNumber> {
 

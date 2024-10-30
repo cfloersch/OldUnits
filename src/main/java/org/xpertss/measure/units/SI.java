@@ -1,6 +1,7 @@
 package org.xpertss.measure.units;
 
 import org.xpertss.measure.quantity.*;
+import org.xpertss.measure.spi.SystemOfUnits;
 import xpertss.unit.converters.AddConverter;
 import xpertss.unit.converters.MultiplyConverter;
 import xpertss.unit.converters.PiMultiplierConverter;

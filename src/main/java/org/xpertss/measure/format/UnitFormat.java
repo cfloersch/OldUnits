@@ -1,7 +1,10 @@
-package org.xpertss.measure;
+package org.xpertss.measure.format;
+
+import org.xpertss.measure.Unit;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.text.ParsePosition;
 
 
 /**
@@ -9,6 +12,8 @@ import java.text.ParseException;
  * and parses a {@link CharSequence} to a {@link Unit}.
  * <p/>
  * TODO How do I get a Format instance?
+ * <p/>
+ * TODO Add additional methods from spec
  *
  * @see Unit
  */
@@ -24,6 +29,9 @@ public interface UnitFormat {
    Appendable format(Unit<?> unit, Appendable appendable)
       throws IOException;
 
+   String format(Unit<?> unit)
+           throws IOException;
+
    /**
     * Parses a portion of the specified {@code CharSequence} from the
     * specified position to produce a unit. If there is no unit to parse
@@ -36,4 +44,10 @@ public interface UnitFormat {
     */
    Unit<?> parse(CharSequence csq)
       throws ParseException;
+
+   Unit<?> parse(CharSequence csq, ParsePosition cursor)
+           throws ParseException;
+
+
+   void label(Unit<?> unit, String label);
 }

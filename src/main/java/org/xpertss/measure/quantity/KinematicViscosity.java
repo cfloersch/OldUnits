@@ -10,6 +10,8 @@ import org.xpertss.measure.units.SI;
  *
  * @see DynamicViscosity
  * @see <a href="http://en.wikipedia.org/wiki/Viscosity">Wikipedia: Viscosity</a>
+ *
+ * TODO Beyond spec
  */
 public interface KinematicViscosity extends Quantity<KinematicViscosity> {
 

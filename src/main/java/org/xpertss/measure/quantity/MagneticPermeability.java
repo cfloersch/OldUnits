@@ -9,6 +9,8 @@ import org.xpertss.measure.Unit;
  * The system unit for this quantity is "H/m" (henry per meter).
  *
  * @see <a href="http://en.wikipedia.org/wiki/Permeability_(electromagnetism)">Wikipedia: Permeability</a>
+ *
+ * TODO Beyond spec
  */
 public interface MagneticPermeability extends Quantity<MagneticPermeability> {
 

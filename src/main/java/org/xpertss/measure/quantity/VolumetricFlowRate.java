@@ -12,6 +12,8 @@ import org.xpertss.measure.Unit;
  * @see Time
  * @see <a href="http://en.wikipedia.org/wiki/Rate_of_fluid_flow">Wikipedia: Volumetric
  *    Flow Rate</a>
+ *
+ * TODO Beyond spec
  */
 public interface VolumetricFlowRate extends Quantity<VolumetricFlowRate> {
 

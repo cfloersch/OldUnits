@@ -11,6 +11,8 @@ import org.xpertss.measure.units.SI;
  * The system unit for this quantity is "J.s" (joules second).
  *
  * @see <a href="http://en.wikipedia.org/wiki/Action_(physics)">Wikipedia: Action</a>
+ *
+ * TODO Beyond spec
  */
 public interface Action extends Quantity<Action> {
 

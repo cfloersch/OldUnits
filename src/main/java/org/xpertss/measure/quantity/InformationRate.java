@@ -9,6 +9,8 @@ import org.xpertss.measure.units.SI;
  *
  * @see Information
  * @see <a href="http://en.wikipedia.org/wiki/Information_rate">Wikipedia: Information Rate</a>
+ *
+ * TODO Beyond spec
  */
 public interface InformationRate extends Quantity<InformationRate> {
 

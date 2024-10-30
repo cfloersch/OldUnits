@@ -18,4 +18,6 @@ package org.xpertss.measure;
  */
 public interface Quantity<Q extends Quantity<Q>> {
 
+    // TODO The spec has a ton of methods we do not have defined here
+    // The spec might be overloading this with Measurement
 }

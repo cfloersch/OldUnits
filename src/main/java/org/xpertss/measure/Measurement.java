@@ -4,6 +4,7 @@ package org.xpertss.measure;
 import java.math.BigDecimal;
 
 // TODO This is basically the Measure and DecimalMeasurable wrapped into one
+// This can be wrapped up in Quantity without the need for a seperate measure class
 
 public abstract class Measurement<Q extends Quantity<Q>> implements Comparable<Measurement<Q>> {
 
@@ -48,6 +49,8 @@ public abstract class Measurement<Q extends Quantity<Q>> implements Comparable<M
    }
 
 
+   // equivalency methods?
+
    public static <Q extends Quantity<Q>> Measurement<Q> of(BigDecimal value, Unit<Q> unit)
    {
       return null;
@@ -63,5 +66,6 @@ public abstract class Measurement<Q extends Quantity<Q>> implements Comparable<M
       return null;
    }
 
+   // TODO Add a creater for BigInteger??
 
 }

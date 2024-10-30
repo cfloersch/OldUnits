@@ -1,4 +1,4 @@
-package org.xpertss.measure.units;
+package org.xpertss.measure.spi;
 
 import java.util.Set;
 
@@ -55,4 +55,8 @@ public interface SystemOfUnits {
     * @return the collection of units of specified dimension.
     */
    Set<? extends Unit<?>> getUnits(Dimension dimension);
+
+
+   // TODO???
+   //Unit<?> getUnit(String unit);
 }

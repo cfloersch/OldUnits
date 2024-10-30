@@ -10,6 +10,8 @@ import org.xpertss.measure.units.SI;
  * @see InformationRate
  * @see <a href="http://en.wikipedia.org/wiki/Units_of_information">Wikipedia:
  *    Units of Information</a>
+ *
+ * TODO Beyond spec
  */
 public interface Information extends Quantity<Information> {
 
