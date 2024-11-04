@@ -286,7 +286,7 @@ public final class ScaleHelper {
             Unit<Q> anotherUnit) {
         return new UnsupportedOperationException(
                 String.format(
-                        "Conversion of Quantitity %s to Unit %s is not supported for realtive scale.", 
+                        "Conversion of Quantity %s to Unit %s is not supported for relative scale.",
                         quantity, anotherUnit));
     }
     

@@ -38,10 +38,12 @@ import tech.uom.lib.common.function.ValueSupplier;
 
 /**
  * <p>
- * This class represents a exponential converter of limited precision. Such converter is used to create inverse of logarithmic unit.
+ * This class represents a exponential converter of limited precision. Such converter
+ * is used to create inverse of logarithmic unit.
  *
  * <p>
- * This class is package private, instances are created using the {@link LogConverter#inverse()} method.
+ * This class is package private, instances are created using the {@link LogConverter#inverse()}
+ * method.
  * </p>
  *
  * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
