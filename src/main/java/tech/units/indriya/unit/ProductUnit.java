@@ -195,7 +195,7 @@ public final class ProductUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
      *
      * @param unit
      *            the unit.
-     * @param nn
+     * @param n
      *            the exponent (nn &gt; 0).
      * @return <code>unit^n</code>
      */
@@ -414,7 +414,7 @@ public final class ProductUnit<Q extends Quantity<Q>> extends AbstractUnit<Q> {
      *
      * @param m
      *            the first number.
-     * @param nn
+     * @param n
      *            the second number.
      * @return the greatest common divisor.
      */
