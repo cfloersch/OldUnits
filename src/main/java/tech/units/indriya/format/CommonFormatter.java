@@ -29,7 +29,6 @@
  */
 package tech.units.indriya.format;
 
-import static org.apiguardian.api.API.Status.INTERNAL;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -42,7 +41,6 @@ import javax.measure.Unit;
 import javax.measure.format.MeasurementParseException;
 import javax.measure.format.UnitFormat;
 
-import org.apiguardian.api.API;
 
 import tech.units.indriya.internal.format.RationalNumberFormat;
 import tech.units.indriya.quantity.MixedQuantity;
@@ -55,7 +53,6 @@ import tech.units.indriya.quantity.Quantities;
  * @version 2.1
  * @since 2.0
  */
-@API(status=INTERNAL)
 abstract class CommonFormatter {
     private static final String ERR_PRIMARY_UNIT_NOT_FOUND = "The primary unit <%s> is not part of the mixed units <%s>"; //$NON-NLS-1$
     

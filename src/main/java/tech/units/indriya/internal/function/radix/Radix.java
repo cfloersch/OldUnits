@@ -29,13 +29,10 @@
  */
 package tech.units.indriya.internal.function.radix;
 
-import static org.apiguardian.api.API.Status.INTERNAL;
 
 import java.util.Objects;
 
 import javax.measure.UnitConverter;
-
-import org.apiguardian.api.API;
 
 import tech.units.indriya.function.Calculus;
 import tech.units.indriya.spi.NumberSystem;
@@ -46,7 +43,6 @@ import tech.units.indriya.spi.NumberSystem;
  * @author Andi Huber
  * @since 2.0
  */
-@API(status=INTERNAL)
 public interface Radix {
 
     /**

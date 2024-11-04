@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Reference Implementation
- * Copyright (c) 2005-2023, Jean-Marie Dautelle, Werner Keil, Otavio Santana.
+ * Units of Measurement Libraries
+ * Copyright (c) 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -27,49 +27,28 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.units.indriya.internal.format;
-
-
-import java.text.FieldPosition;
-import java.text.NumberFormat;
-import java.text.ParsePosition;
-
+package tech.uom.lib.common.function;
 
 /**
- * Wraps a given {@link NumberFormat} and extends it to also support the rational number format. 
- * <p>
- * eg. {@code 5÷3}
- *  
- * @author Andi Huber
+ * Represents a supplier of int-valued base.
  *
+ * <p>There is no requirement that a new or distinct result be returned each
+ * time the supplier is invoked.
+ *
+ * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
+ * whose functional method is {@link #getBase()}.
+ *
+ * @author Werner Keil
+ * @version 0.2, $Date: 2018-05-10 $
+ * @since 2.0
  */
-public class RationalNumberFormat extends NumberFormat {
-    
-    private static final long serialVersionUID = 1L;
-    
-    private final NumberFormat numberFormat;
+@FunctionalInterface
+public interface IntBaseSupplier {
 
-    public static RationalNumberFormat wrap(NumberFormat numberFormat) {
-        return new RationalNumberFormat(numberFormat);
-    }
-    
-    private RationalNumberFormat(NumberFormat numberFormat) {
-        this.numberFormat = numberFormat;
-    }
-
-    @Override
-    public StringBuffer format(double number, StringBuffer toAppendTo, FieldPosition pos) {
-        return numberFormat.format(number, toAppendTo, pos);
-    }
-
-    @Override
-    public StringBuffer format(long number, StringBuffer toAppendTo, FieldPosition pos) {
-        return numberFormat.format(number, toAppendTo, pos);
-    }
-
-    @Override
-    public Number parse(String source, ParsePosition parsePosition) {
-        return new RationalNumberScanner(source, parsePosition, numberFormat).getNumber();
-    }
-
+    /**
+     * Gets a base value.
+     *
+     * @return a base value
+     */
+    int getBase();
 }

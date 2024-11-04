@@ -29,13 +29,9 @@
  */
 package tech.units.indriya.internal.format;
 
-import static org.apiguardian.api.API.Status.INTERNAL;
-
 import javax.measure.MeasurementError;
 import javax.measure.Prefix;
 import javax.measure.Unit;
-
-import org.apiguardian.api.API;
 
 import tech.units.indriya.AbstractUnit;
 import tech.units.indriya.format.SymbolMap;
@@ -44,7 +40,6 @@ import tech.units.indriya.format.TokenException;
 import tech.units.indriya.function.LogConverter;
 import tech.units.indriya.function.MultiplyConverter;
 
-@API(status=INTERNAL)
 public final class UnitFormatParser implements UnitTokenConstants {
 
   private static class Exponent {

@@ -29,11 +29,8 @@
  */
 package tech.units.indriya.internal.function;
 
-import static org.apiguardian.api.API.Status.INTERNAL;
 
 import java.util.Objects;
-
-import org.apiguardian.api.API;
 
 import tech.units.indriya.function.Calculus;
 import tech.units.indriya.spi.NumberSystem;
@@ -46,7 +43,6 @@ import tech.units.indriya.spi.NumberSystem;
  * @version 2.1, May 14, 2021
  * @since 2.0
  */
-@API(status=INTERNAL)
 public final class Calculator {
 
     /**

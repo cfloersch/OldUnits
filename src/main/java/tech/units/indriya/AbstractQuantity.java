@@ -37,10 +37,8 @@ import javax.measure.Unit;
 import javax.measure.format.QuantityFormat;
 import javax.measure.quantity.Dimensionless;
 
-import org.apiguardian.api.API;
 
 import static javax.measure.Quantity.Scale.ABSOLUTE;
-import static org.apiguardian.api.API.Status.STABLE;
 
 import tech.units.indriya.format.SimpleQuantityFormat;
 import tech.units.indriya.format.SimpleUnitFormat;
@@ -113,7 +111,6 @@ import tech.uom.lib.common.function.ValueSupplier;
  * @version 2.5 Dec 14, 2022
  * @since 1.0
  */
-@API(status=STABLE)
 @SuppressWarnings("unchecked")
 public abstract class AbstractQuantity<Q extends Quantity<Q>> implements ComparableQuantity<Q>, UnitSupplier<Q>, ValueSupplier<Number> {
 

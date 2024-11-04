@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Reference Implementation
- * Copyright (c) 2005-2023, Jean-Marie Dautelle, Werner Keil, Otavio Santana.
+ * Units of Measurement Libraries
+ * Copyright (c) 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -27,49 +27,40 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.units.indriya.internal.format;
+package tech.uom.lib.common.util;
 
+import javax.measure.Unit;
+import javax.measure.spi.SystemOfUnits;
 
-import java.text.FieldPosition;
-import java.text.NumberFormat;
-import java.text.ParsePosition;
+public class SystemOfUnitsReporter {
+    final SystemOfUnits sou;
 
-
-/**
- * Wraps a given {@link NumberFormat} and extends it to also support the rational number format. 
- * <p>
- * eg. {@code 5÷3}
- *  
- * @author Andi Huber
- *
- */
-public class RationalNumberFormat extends NumberFormat {
-    
-    private static final long serialVersionUID = 1L;
-    
-    private final NumberFormat numberFormat;
-
-    public static RationalNumberFormat wrap(NumberFormat numberFormat) {
-        return new RationalNumberFormat(numberFormat);
-    }
-    
-    private RationalNumberFormat(NumberFormat numberFormat) {
-        this.numberFormat = numberFormat;
+    private SystemOfUnitsReporter(SystemOfUnits unitSystem) {
+        this.sou = unitSystem;
     }
 
-    @Override
-    public StringBuffer format(double number, StringBuffer toAppendTo, FieldPosition pos) {
-        return numberFormat.format(number, toAppendTo, pos);
+    public static SystemOfUnitsReporter of(SystemOfUnits unitSystem) {
+        return new SystemOfUnitsReporter(unitSystem);
     }
 
-    @Override
-    public StringBuffer format(long number, StringBuffer toAppendTo, FieldPosition pos) {
-        return numberFormat.format(number, toAppendTo, pos);
+    public void report(boolean showIndex) {
+        printSoU(sou, showIndex);
     }
 
-    @Override
-    public Number parse(String source, ParsePosition parsePosition) {
-        return new RationalNumberScanner(source, parsePosition, numberFormat).getNumber();
+    public void report() {
+        report(false);
     }
 
+    private static void printSoU(final SystemOfUnits sou, final boolean showIndex) {
+        int index = 0;
+        System.out.println("Reporting " + sou.getName());
+        for (Unit<?> u : sou.getUnits()) {
+            index++;
+            if (showIndex) {
+                System.out.println(index + "; " + u.getName() + "; " + u.getSymbol() + "; " + u);
+            } else {
+                System.out.println(u.getName() + "; " + u.getSymbol() + "; " + u);
+            }
+        }
+    }
 }

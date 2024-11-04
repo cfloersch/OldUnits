@@ -29,12 +29,10 @@
  */
 package tech.units.indriya.internal.function;
 
-import static org.apiguardian.api.API.Status.INTERNAL;
 
 import java.util.Objects;
 import java.util.function.Supplier;
 
-import org.apiguardian.api.API;
 
 /**
  * Holder of an instance of type T, supporting the <em>compute-if-absent</em> idiom in a thread-safe manner.
@@ -44,7 +42,6 @@ import org.apiguardian.api.API;
  * @author Andi Huber
  * @since 2.0.3
  */
-@API(status=INTERNAL)
 public class Lazy<T> {
     private final Supplier<? extends T> supplier;
     private T value;

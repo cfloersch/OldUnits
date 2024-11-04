@@ -183,9 +183,11 @@ public abstract class AbstractUnit<Q extends Quantity<Q>>
 	 * Annotates the specified unit. Annotation does not change the unit semantic.
 	 * Annotations are often written between curly braces behind units. For
 	 * example:<br>
-	 * <code> Unit<Volume> PERCENT_VOL = ((AbstractUnit)Units.PERCENT).annotate("vol"); // "%{vol}" Unit<Mass> KG_TOTAL =
-	 * ((AbstractUnit)Units.KILOGRAM).annotate("total"); // "kg{total}" Unit<Dimensionless> RED_BLOOD_CELLS = ((AbstractUnit)Units.ONE).annotate("RBC"); // "{RBC}" </code>
-	 *
+	 * <code>
+	 *   Unit<Volume> PERCENT_VOL = ((AbstractUnit)Units.PERCENT).annotate("vol"); // "%{vol}"
+	 *   Unit<Mass> KG_TOTAL = ((AbstractUnit)Units.KILOGRAM).annotate("total"); // "kg{total}"
+	 *   Unit<Dimensionless> RED_BLOOD_CELLS = ((AbstractUnit)Units.ONE).annotate("RBC"); // "{RBC}"
+	 * </code>
 	 * Note: Annotation of system units are not considered themselves as system
 	 * units.
 	 *
@@ -215,7 +217,8 @@ public abstract class AbstractUnit<Q extends Quantity<Q>>
 	 *                                   be correctly parsed (e.g. not UCUM
 	 *                                   compliant).
 	 */
-	public static Unit<?> parse(CharSequence charSequence) {
+	public static Unit<?> parse(CharSequence charSequence)
+	{
 		return SimpleUnitFormat.getInstance().parse(charSequence);
 	}
 
@@ -234,6 +237,9 @@ public abstract class AbstractUnit<Q extends Quantity<Q>>
 	public String toString() {
 		return SimpleUnitFormat.getInstance().format(this);
 	}
+
+
+
 
 	// ///////////////////////////////////////////////////////
 	// Implements javax.measure.Unit<Q> interface //

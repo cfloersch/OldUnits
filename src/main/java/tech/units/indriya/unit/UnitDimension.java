@@ -133,8 +133,8 @@ public class UnitDimension implements Dimension, Serializable {
 
 	/**
 	 * Returns the dimension for the specified quantity type by aggregating the
-	 * results from the default {@link javax.measure.spi.SystemOfUnits SystemOfUnits} or <code>null</code> if the specified
-	 * quantity is unknown.
+	 * results from the default {@link javax.measure.spi.SystemOfUnits SystemOfUnits}
+	 * or <code>null</code> if the specified quantity is unknown.
 	 *
 	 * @param quantityType the quantity type.
 	 * @return the dimension for the quantity type or <code>null</code>.
@@ -152,7 +152,7 @@ public class UnitDimension implements Dimension, Serializable {
 	/**
 	 * Returns the dimension for the specified symbol.
 	 *
-	 * @param sambol the quantity symbol.
+	 * @param symbol the quantity symbol.
 	 * @return the dimension for the given symbol.
 	 * @since 1.0.1
 	 */
@@ -264,8 +264,8 @@ public class UnitDimension implements Dimension, Serializable {
 	}
 
 	/**
-	 * Returns the fundamental (base) dimensions and their exponent whose product is
-	 * this dimension or <code>null</code> if this dimension is a fundamental
+	 * Returns the fundamental (base) dimensions and their exponent whose product
+	 * is this dimension or <code>null</code> if this dimension is a fundamental
 	 * dimension.
 	 *
 	 * @return the mapping between the base dimensions and their exponent.

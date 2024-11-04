@@ -29,8 +29,6 @@
  */
 package tech.units.indriya.quantity;
 
-import static org.apiguardian.api.API.Status.MAINTAINED;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,8 +39,6 @@ import java.util.stream.Collectors;
 
 import javax.measure.Quantity;
 import javax.measure.Quantity.Scale;
-
-import org.apiguardian.api.API;
 
 import javax.measure.Unit;
 
@@ -69,7 +65,6 @@ import tech.uom.lib.common.function.QuantityConverter;
  * @see MixedRadix
  * @since 2.1.2
  */
-@API(status=MAINTAINED)
 public final class MixedQuantity<Q extends Quantity<Q>> implements QuantityConverter<Q>, Serializable {
     /**
     * 

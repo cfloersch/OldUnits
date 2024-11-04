@@ -43,8 +43,9 @@ import tech.uom.lib.common.function.QuantitySupplier;
  * A Measurement contains a {@link Quantity} and a timestamp.
  *
  * <p>
- * A {@code Measurement} object is used for maintaining the tuple of quantity and time-stamp. The value is represented as {@linkplain Quantity} and
- * the time as {@linkplain Instant} plus <code>long</code> for backward-compatibility.
+ * A {@code Measurement} object is used for maintaining the tuple of quantity and
+ * time-stamp. The value is represented as {@linkplain Quantity} and the time as
+ * {@linkplain Instant} plus <code>long</code> for backward-compatibility.
  * <p>
  *
  * @see {@link QuantitySupplier}

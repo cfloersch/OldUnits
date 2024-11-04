@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Reference Implementation
- * Copyright (c) 2005-2023, Jean-Marie Dautelle, Werner Keil, Otavio Santana.
+ * Units of Measurement Libraries
+ * Copyright (c) 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -27,49 +27,41 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.units.indriya.internal.format;
+package tech.uom.lib.common.util;
 
-
-import java.text.FieldPosition;
-import java.text.NumberFormat;
-import java.text.ParsePosition;
-
+import java.util.Comparator;
+import javax.measure.Unit;
 
 /**
- * Wraps a given {@link NumberFormat} and extends it to also support the rational number format. 
- * <p>
- * eg. {@code 5÷3}
- *  
- * @author Andi Huber
+ * Comparator to sort units by natural order, looking both the name and the symbol.
  *
+ * @author <a href="mailto:werner@uom.technology">Werner Keil</a>
+ * @version 1.1
+ * @param <U> the type to compare
+ * @return <b>Given:</b>
+ *         <p>
+ *         Quantity&lt;Time&gt; day = timeFactory.create(1, Units.DAY);
+ *         </p>
+ *         <p>
+ *         Quantity&lt;Time&gt; hours = timeFactory.create(18, Units.HOUR);
+ *         </p>
+ *         <p>
+ *         Quantity&lt;Time&gt; minutes = timeFactory.create(15, Units.HOUR);
+ *         </p>
+ *         <p>
+ *         Quantity&lt;Time&gt; seconds = timeFactory.create(100, Units.HOUR);
+ *         </p>
+ *         will return: seconds, minutes, hours, day
+ * @since 2.0
  */
-public class RationalNumberFormat extends NumberFormat {
-    
-    private static final long serialVersionUID = 1L;
-    
-    private final NumberFormat numberFormat;
-
-    public static RationalNumberFormat wrap(NumberFormat numberFormat) {
-        return new RationalNumberFormat(numberFormat);
-    }
-    
-    private RationalNumberFormat(NumberFormat numberFormat) {
-        this.numberFormat = numberFormat;
-    }
+public class UnitComparator<U extends Unit<?>> implements Comparator<U> {
 
     @Override
-    public StringBuffer format(double number, StringBuffer toAppendTo, FieldPosition pos) {
-        return numberFormat.format(number, toAppendTo, pos);
+    public int compare(U u1, U u2) {
+        if (u1.getName() != null && u1.getName().equals(u2.getName())) {
+            return u1.toString().compareTo(u2.toString());
+            // TODO why is this the same as below?
+        }
+        return u1.toString().compareTo(u2.toString());
     }
-
-    @Override
-    public StringBuffer format(long number, StringBuffer toAppendTo, FieldPosition pos) {
-        return numberFormat.format(number, toAppendTo, pos);
-    }
-
-    @Override
-    public Number parse(String source, ParsePosition parsePosition) {
-        return new RationalNumberScanner(source, parsePosition, numberFormat).getNumber();
-    }
-
 }

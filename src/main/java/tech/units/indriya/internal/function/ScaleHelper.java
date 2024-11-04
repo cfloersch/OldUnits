@@ -36,14 +36,12 @@ import java.util.function.UnaryOperator;
 import javax.measure.Quantity;
 import javax.measure.Quantity.Scale;
 
-import org.apiguardian.api.API;
 
 import javax.measure.Unit;
 import javax.measure.UnitConverter;
 
 import static javax.measure.Quantity.Scale.ABSOLUTE;
 import static javax.measure.Quantity.Scale.RELATIVE;
-import static org.apiguardian.api.API.Status.INTERNAL;
 
 import tech.units.indriya.ComparableQuantity;
 import tech.units.indriya.function.AbstractConverter;
@@ -54,7 +52,6 @@ import tech.units.indriya.quantity.Quantities;
  * 
  * @author Andi Huber
  */
-@API(status=INTERNAL)
 public final class ScaleHelper {
 
     public static boolean isAbsolute(final Quantity<?> quantity) {
